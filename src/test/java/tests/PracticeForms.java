@@ -1,5 +1,6 @@
 package tests;
 
+import helpMethods.ElementsMethod;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -10,6 +11,7 @@ import java.util.List;
 public class PracticeForms {
 
     public WebDriver driver;
+    ElementsMethod elementsMethod;
 
 
     @Test
@@ -19,39 +21,33 @@ public class PracticeForms {
         //Deschidem un browser
 
         driver = new ChromeDriver();
+        elementsMethod = new ElementsMethod(driver);
         driver.manage().window().maximize();
 
-        //Accesam un URL
-
         driver.get("https://demoqa.com/");
-        JavascriptExecutor js = (JavascriptExecutor) driver;
 
         WebElement formsMeniu = driver.findElement(By.xpath("//h5[text()='Forms']"));
-        js.executeScript("arguments[0].click();", formsMeniu);
+        elementsMethod.javaScriptElement(formsMeniu);
 
         WebElement practiceForm = driver.findElement(By.xpath("//span[text()='Practice Form']"));
-        practiceForm.click();
+        elementsMethod.clickElement(practiceForm);
 
         WebElement firstNameElement = driver.findElement(By.id("firstName"));
-        String firstName = "Johny";
-        firstNameElement.sendKeys(firstName);
+        elementsMethod.fillElement(firstNameElement, "Johny");
 
         WebElement lastNameElement = driver.findElement(By.id("lastName"));
-        String lastName = "Cash";
-        lastNameElement.sendKeys(lastName);
+        elementsMethod.fillElement(lastNameElement, "Cash");
 
         WebElement userEmailElement = driver.findElement(By.id("userEmail"));
-        String userEmail = "johnycash12n@gmail.com";
-        userEmailElement.sendKeys(userEmail);
+        elementsMethod.fillElement(userEmailElement,"mail@mail.com");
 
         WebElement mobileElement = driver.findElement(By.id("userNumber"));
-        String mobile = "0745213252";
-        mobileElement.sendKeys(mobile);
+        elementsMethod.fillElement(mobileElement, "0746430354");
 
 //        Date of birth interaction
 
         WebElement dateOfBirth = driver.findElement(By.id("dateOfBirthInput"));
-        dateOfBirth.click();
+        elementsMethod.clickElement(dateOfBirth);
         WebElement monthElement = driver.findElement(By.className("react-datepicker__month-select"));
         Select monthSelect = new Select(monthElement);
         String monthValue = "January";
