@@ -1,0 +1,87 @@
+
+Exercitiu
+
+De la ce banca e cardul? si implicit ce taxe se percep la retragerea de numerar
+
+Daca pe card sunt fonduri suficiente
+
+daca bancomatul nu are fonduri suficiente
+
+daca cardul e expirat
+
+daca e card de debit/credit
+
+
+TEST CASES - exemplu
+
+2025: verifying relogging into Gmail 
+
+Preconditions: Already have an active Gmail address.
+		In the past, you must have been connected and saved your Gmail username and password.
+
+Steps:
+
+1. Write on your Google Chrome browser "gmail.com" and press the Enter key.
+ Expected results: The Login page appears
+		Your account is already there. (e.g. mail.madalina.chera@gmail.com)
+
+2. Select your account with a left click.
+Expected results: The password field appears with a blank space.
+
+3. Write the password in the "Enter your password" field.
+Expected results: The field is now completed with your password marked with *. (e.g. *******)
+
+4. Click the "Next" button.
+Expected results: The Gmail page is opened. 
+
+
+
+Exercitiu
+
+Buguri:
+Nissan:
+1.cand apesi pe prompul cu Nissan, inainte a te redirctioneze pe pagina iti apare o alta casuta si trebuie dat ok ca sa mergi mai departe
+2. Un votant a votat de 2 ori 
+
+Mercedes
+1.cand intri pe promptul cu Mercedes, la partea de comments un comentariu ste repetat si nu e bine afisat
+2. pe prima pagina partea cu Mercedes e aranjata mai os in pagina, nu e aliniata
+
+Mclaren 
+1. Se repeta usernameul de la votanti
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
