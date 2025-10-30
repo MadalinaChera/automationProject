@@ -30,15 +30,8 @@ public class FramesTest {
         HomePage homePage = new HomePage(driver);
         homePage.clickAlertFrameWindow();
 
-        WebElement tabButton = driver.findElement(By.xpath("//span[text()='Frames']"));
-        elementsMethod.javaScriptElement(tabButton);
         FramesPage frames = new FramesPage(driver);
         frames.clickFramesButton();
-
-        frameMethods.switchToSpecificFrame("frame1");
-
-        frameMethods.switchToParent();
-
-        frameMethods.switchToSpecificFrame("frame2");
+        frames.switchFrames("frame1", "frame2");
     }
 }
