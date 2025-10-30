@@ -6,6 +6,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.AlertsWindows;
+import pages.HomePage;
 
 import java.time.Duration;
 
@@ -26,26 +28,24 @@ public class AlertTest {
         driver.get("https://demoqa.com/");
         driver.manage().window().maximize();
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        HomePage homePage = new HomePage(driver);
+        homePage.clickAlertFrameWindow();
 
-        WebElement alertMeniu = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
-        elementsMethod.javaScriptElement(alertMeniu);
-
-        WebElement tabButton = driver.findElement(By.xpath("//span[text()='Alerts']"));
-        elementsMethod.clickElement(tabButton);
+        AlertsWindows alertsWindows = new AlertsWindows(driver);
+        alertsWindows.clickAlert();
 
         WebElement firstAlertElement = driver.findElement(By.id("alertButton"));
-        elementsMethod.clickElement(firstAlertElement);
+        elementsMethod.javaScriptElement(firstAlertElement);
 
         alertsMethods.acceptAlert();
 
         WebElement secondAlert = driver.findElement(By.id("timerAlertButton"));
-        elementsMethod.clickElement(secondAlert);
+        elementsMethod.javaScriptElement(secondAlert);
 
         alertsMethods.acceptAlert();
 
         WebElement thirdAlertElement = driver.findElement(By.id("confirmButton"));
-        elementsMethod.clickElement(thirdAlertElement);
+        elementsMethod.javaScriptElement(thirdAlertElement);
 
         boolean chooseAccept = true;  // pune false daca vrei Cancel
         alertsMethods.acceptAlert(chooseAccept);
