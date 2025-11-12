@@ -5,26 +5,20 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
+import sharedData.ShareData;
 
 import java.util.List;
 
-public class PracticeForms {
+public class PracticeForms extends ShareData {
 
-    public WebDriver driver;
     ElementsMethod elementsMethod;
 
-
     @Test
-
     public void metodaTest() {
 
         //Deschidem un browser
 
-        driver = new ChromeDriver();
         elementsMethod = new ElementsMethod(driver);
-        driver.manage().window().maximize();
-
-        driver.get("https://demoqa.com/");
 
         WebElement formsMeniu = driver.findElement(By.xpath("//h5[text()='Forms']"));
         elementsMethod.javaScriptElement(formsMeniu);

@@ -9,9 +9,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import pages.FramesPage;
 import pages.HomePage;
+import sharedData.ShareData;
 
-public class FramesTest {
-    public WebDriver driver;
+public class FramesTest extends ShareData {
     ElementsMethod elementsMethod;
     FrameMethods frameMethods;
 
@@ -20,12 +20,8 @@ public class FramesTest {
     public void metodaTest() {
         //Deschidem un browser
 
-        driver = new ChromeDriver();
         elementsMethod = new ElementsMethod(driver);
         frameMethods = new FrameMethods(driver);
-
-        driver.get("https://demoqa.com/");
-        driver.manage().window().maximize();
 
         HomePage homePage = new HomePage(driver);
         homePage.clickAlertFrameWindow();

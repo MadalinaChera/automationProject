@@ -8,12 +8,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AlertsWindows;
 import pages.HomePage;
+import sharedData.ShareData;
 
 import java.time.Duration;
 
-public class AlertTest {
+public class AlertTest extends ShareData {
 
-    public WebDriver driver;
     ElementsMethod elementsMethod;
     AlertsMethods alertsMethods;
 
@@ -21,12 +21,8 @@ public class AlertTest {
 
     public void metodaTest() {
 
-        driver = new ChromeDriver();
         elementsMethod = new ElementsMethod(driver);
         alertsMethods = new AlertsMethods(driver);
-
-        driver.get("https://demoqa.com/");
-        driver.manage().window().maximize();
 
         HomePage homePage = new HomePage(driver);
         homePage.clickAlertFrameWindow();

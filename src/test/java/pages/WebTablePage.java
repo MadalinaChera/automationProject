@@ -10,16 +10,7 @@ import org.testng.Assert;
 
 import java.util.List;
 
-public class WebTablePage {
-
-    public WebDriver driver;
-    public ElementsMethod elementsMethod;
-
-    public WebTablePage(WebDriver driver) {
-        this.driver = driver;
-        elementsMethod = new ElementsMethod(this.driver);
-        PageFactory.initElements(this.driver, this);
-    }
+public class WebTablePage extends BasePage{
 
     @FindBy(xpath = "//div[@class='rt-tbody']/div/div[@class='rt-tr -odd' or @class='rt-tr -even']")
     public List<WebElement> tableContentList;
@@ -77,6 +68,10 @@ public class WebTablePage {
 
     @FindBy(xpath = "//div[@class='rt-tbody']/div/div[@class='rt-tr -odd' or @class='rt-tr -even']")
     public List<WebElement> continutTabelSters;
+
+    public WebTablePage(WebDriver driver) {
+        super(driver);
+    }
 
     public void createProcess(){
         List<WebElement> continutTabel = driver.findElements(By.xpath("//div[@class='rt-tbody']/div/div[@class='rt-tr -odd' or @class='rt-tr -even']"));

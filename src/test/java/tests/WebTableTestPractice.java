@@ -5,24 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import sharedData.ShareData;
 
-public class WebTableTestPractice {
-
-    public WebDriver driver;
+public class WebTableTestPractice extends ShareData {
 
     @Test
-
     public void metodaTest() {
-
-        // deschidem un browser
-
-        driver= new ChromeDriver();
-
-        //accesam un URL
-
-        driver.get("https://demoqa.com/webtables");
-
-        driver.manage().window().maximize();
 
         // definim un element
 
@@ -56,37 +44,5 @@ public class WebTableTestPractice {
         WebElement submitElement = driver.findElement(By.id("submit"));
         submitElement.click();
     }
-@Test
-    public void metodaTest1() {
 
-    // deschidem un browser
-
-    driver = new ChromeDriver();
-
-    //accesam un URL
-
-    driver.get("https://demoqa.com/text-box");
-
-    driver.manage().window().maximize();
-
-    WebElement fullnameElement = driver.findElement(By.id("userName"));
-    String fullname = "Madalina Chera";
-    fullnameElement.sendKeys(fullname);
-
-    WebElement emailElement = driver.findElement(By.id("userEmail"));
-    String email = "Madalina@yahoo.com";
-    emailElement.sendKeys(email);
-
-    WebElement currentaddressElement = driver.findElement(By.id("currentAddress"));
-    String currentaddress = "Timis";
-    currentaddressElement.sendKeys(currentaddress);
-
-    WebElement permanentaddressElement = driver.findElement(By.id("permanentAddress"));
-    String permanentaddress = "Timisoara";
-    permanentaddressElement.sendKeys(permanentaddress);
-
-    WebElement submitElement = driver.findElement(By.id("submit"));
-    submitElement.click();
-
-    }
 }
