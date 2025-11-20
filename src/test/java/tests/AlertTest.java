@@ -21,13 +21,13 @@ public class AlertTest extends ShareData {
 
     public void metodaTest() {
 
-        elementsMethod = new ElementsMethod(driver);
-        alertsMethods = new AlertsMethods(driver);
+        elementsMethod = new ElementsMethod(getDriver());
+        alertsMethods = new AlertsMethods(getDriver());
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         homePage.clickAlertFrameWindow();
 
-        AlertsWindows alertsWindows = new AlertsWindows(driver);
+        AlertsWindows alertsWindows = new AlertsWindows(getDriver());
         alertsWindows.clickAlert();
         alertsWindows.dealAlertProcess();
     }
